@@ -1,0 +1,133 @@
+---
+title: "Untitled"
+output: html_document
+date: "2025-03-01"
+---
+
+```{r}
+library(Matrix)
+library(matlib)
+library(fastmatrix)
+library(Rlinsolve)
+```
+
+```{r}
+data=read.csv("coffee_shop_revenue.csv")
+```
+
+```{r}
+data
+```
+
+```{r}
+set.seed(27342552)
+sampel=data[sample(nrow(data),1000),]
+```
+
+```{r}
+
+```
+
+
+```{r}
+data1=data[-c(6,7)]
+data2=data[c(6,7)]
+```
+
+
+```{r}
+mat1=as.matrix(data1)
+mat2=as.matrix(data2)
+```
+
+```{r}
+xa=t(mat1)
+```
+
+
+```{r}
+aaa=(xa%*%mat1)
+aab=(xa%*%mat2)
+```
+
+```{r}
+aaa
+```
+
+
+```{r}
+solve(aaa,aab)
+```
+```{r}
+echelon(aaa,aab)
+```
+
+
+```{r}
+aa=lu(aaa)
+```
+
+```{r}
+(L <- elu$L)
+(U <- elu$U)
+(P <- elu$P)
+```
+
+```{r}
+
+```
+
+```{r}
+ P %*% L %*% U
+```
+
+```{r}
+L %*% U
+```
+
+
+```{r}
+all.equal(Matrix(aaa), with(elu, P %*% L %*% U))
+```
+```{r}
+(Y <- solve(L, solve(P) %*% aab)) 
+(X <- solve(U, Y))
+```
+
+```{r}
+solve(P %*% L %*% U, aab)
+```
+
+
+```{r}
+solve(P) %*% aab
+```
+
+
+```{r}
+all.equal(X, Matrix(solve(aaa, aab)))
+```
+
+```{r}
+new=aaa-U-L
+```
+
+
+
+```{r}
+set.seed(1234)
+jaco=lsolve.jacobi(aaa,aab,weight = 0.02,xinit = NA,reltol = 1e-6,maxiter = 1000)
+```
+
+```{r}
+jaco
+```
+
+```{r}
+gau=lsolve.gs(aaa,aab,xinit = NA,reltol = 1e-6,maxiter = 1000)
+```
+
+```{r}
+gau
+```
+
