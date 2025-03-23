@@ -20,7 +20,7 @@ st.write("""dibuat oleh
          nama: Joseph FIlius H  
          NIM: 20234920002""")
 st.header("Flowchart")
-st.image("josfii/sem4/uts/met_num/fftfchart.jpg")
+st.image("JosFII/sem4/uts/met_num/fftfchart.jpg")
 
 st.header("Data: data listrik oleh AECI di amerika dari juli sampai desember")
 st.write("data berisi data data yang berhubungan dengan listrik dibagian amerika dimana provider listriknya AECI"
@@ -48,7 +48,7 @@ st.markdown("""berikut kode R untuk line chart demand dan hasilnya \n
         ggplot(df, aes(Local.Time.at.End.of.Hour ,Demand..MW.)) +
         geom_line(color = "green")
 """)
-st.image("josfii/sem4/uts/met_num/linep.png")
+st.image("JosFII/sem4/uts/met_num/linep.png")
 st.write("berikut jumlah data null di setiap kolum")
 st.write(df.isnull().sum())
 st.write("berikut statistik deskriptif")
@@ -83,7 +83,7 @@ st.markdown(""" sekarang akan dibuat grafik untuk hasil dari FFT \n
                 y = "Amplitude")
 
 """)
-st.image("josfii/sem4/uts/met_num/gafft.png")
+st.image("JosFII/sem4/uts/met_num/gafft.png")
 st.write("""Dari grafik ini bisa di lihat bahwa dari data, terdapat tiga frequency yang dominan didalam data.
 Jadi dapat dibilang terdapat tiga factor yang dominan dalam mempengaruhi nilai dan varians demand Listrik.
 """)
