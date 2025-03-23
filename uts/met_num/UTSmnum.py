@@ -20,7 +20,7 @@ st.write("""dibuat oleh
          nama: Joseph FIlius H  
          NIM: 20234920002""")
 st.header("Flowchart")
-st.image("sem4/uts/met_num/fftfchart.jpg")
+st.image("/sem4/uts/met_num/fftfchart.jpg")
 
 st.header("Data: data listrik oleh AECI di amerika dari juli sampai desember")
 st.write("data berisi data data yang berhubungan dengan listrik dibagian amerika dimana provider listriknya AECI"
